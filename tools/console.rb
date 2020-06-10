@@ -9,19 +9,26 @@ end
  #### Repair Shop
 
 ##Sample Instances
+
+##Stores
+
+store1 = Store.new("Silverspring")
+
 #Clients
 dave = Client.new("Dave")
 esther = Client.new("Esther")
 chine = Client.new("Chine")
 
 #Technicians
-paul = Technician.new("Paul")
-maddie = Technician.new("Maddie")
+paul = Technician.new("Paul",store1)
+maddie = Technician.new("Maddie",store1)
 
 #RepairTickets
 repair_ticket_1 = RepairTicket.new(dave, paul,"broken screen")
 repair_ticket_2 = RepairTicket.new(chine, maddie, "dead battery")
 repair_ticket_3 = RepairTicket.new(dave, maddie, "new keyboard")
+
+ 
 
 
 ## Client
@@ -45,8 +52,7 @@ repair_ticket_3 = RepairTicket.new(dave, maddie, "new keyboard")
 # puts paul.repairs.include?(repair_ticket_1)
 #next_in_line
 
-pp  maddie.next_in_line
-pp maddie.next_in_line 
+
 #close_ticket
 # maddie.close_ticket(repair_ticket_2)
 # puts repair_ticket_2.status
@@ -59,6 +65,7 @@ pp maddie.next_in_line
 ##BONUS
 #cost_estimate
 
-
-#binding.pry 
+puts store1.assign_job(dave, "broken phone")
+puts RepairTicket.all
+#binding.pry
 0

@@ -1,14 +1,17 @@
 class Technician 
 
-attr_accessor
+attr_accessor :location, :hourly_rate
 attr_reader :name
 attr_writer
 
 @@all = []
  
-def initialize(name)
+def initialize(name,location,hourly_rate = 20)
     @name = name
+    @location = location
     @@all << self
+    @hourly_rate = hourly_rate
+    
 end
 
 def self.all
