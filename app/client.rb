@@ -1,21 +1,28 @@
 class Client
-    attr_accessor :name, :problem
-    
-
+    attr_accessor :name
     @@all = []
  
-def initialize(name, problem)
-    @name = name
-    @problem = problem
-    @@all << self
-end
+    def initialize(name)
+        @name = name
+        @@all << self
+    end
 
-def self.all
-    @@all
-    binding.pry
-end
+    def self.all
+        @@all
+    end
 
+    def repairs
+        RepairTicket.all.select {|repair| repair.client == self}
+    end
 
+    def open_repairs
+        self.repairs.select {|repair| repair.status == "open"}
+    end
+
+    def technicians
+        self.repairs.map {|repair| repair.technician }
+        binding.pry
+    end
 
 
 

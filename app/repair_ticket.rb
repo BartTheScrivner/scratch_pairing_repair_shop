@@ -1,20 +1,22 @@
-class Repairticket
-    attr_accessor :client, :technician, :problem
-    
+class RepairTicket
+    attr_accessor :client, :technician, :problem, :status
+    @@all = []
 
-def initialize (client,technician,problem)
-    @client = client
-    @technician = technician
-    @problem = problem
-end
+    def initialize (client, technician, problem)
+        @client = client
+        @technician = technician
+        @problem = problem
+        @status = "open"
+        @@all << self
+    end
 
-def add_price(problem)
+    def add_price(problem)
+ 
+    end
 
-    
-end
-
-
-
+    def self.all
+      @@all
+    end
 
 
 end
