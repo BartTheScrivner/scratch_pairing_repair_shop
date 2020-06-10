@@ -28,21 +28,28 @@ repair_ticket_3 = RepairTicket.new(dave, maddie, "new keyboard")
 
 ##.all
 #repairs returns all repairs client has had
-puts dave.repairs.include?(repair_ticket_1)
-puts dave.repairs.count.eql?(2)
+# puts dave.repairs.include?(repair_ticket_1)
+# puts dave.repairs.count.eql?(2)
 
 #open_repairs
-dave.open_repairs
+# dave.open_repairs
 #technicians
-dave.technicians
+# dave.technicians
 
 ## Technician
 
 ##.all
-#clients
+#clients 
+# pp maddie.clients 
 #repairs
-#next 
+# puts paul.repairs.include?(repair_ticket_1)
+#next_in_line
+
+pp  maddie.next_in_line
+pp maddie.next_in_line 
 #close_ticket
+# maddie.close_ticket(repair_ticket_2)
+# puts repair_ticket_2.status
 
 ## Repair Ticket 
 
